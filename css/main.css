@@ -1,0 +1,287 @@
+body {
+  background-color: #fff;
+  margin: 0;
+  padding: 0; }
+
+.flags-wrapper {
+  position: relative;
+  min-height: 100vh;
+  padding-bottom: 400px; }
+
+.flags-wrapper--success {
+  position: relative; }
+
+.flags-top {
+  height: 760px;
+  background: url("../images/background-mobile.png") no-repeat bottom left;
+  background-size: cover; }
+  @media screen and (min-width: 450px) {
+    .flags-top {
+      height: 800px;
+      background: url("../images/background-mobile.png") no-repeat bottom left;
+      background-size: auto 820px; } }
+  @media screen and (min-width: 550px) {
+    .flags-top {
+      height: 840px;
+      background: url("../images/background.png") no-repeat top -11vw left;
+      background-size: 970px auto; } }
+  @media screen and (min-width: 700px) {
+    .flags-top {
+      height: 900px;
+      background: url("../images/background.png") no-repeat bottom 32px left;
+      background-size: cover; } }
+  @media screen and (min-width: 1084px) {
+    .flags-top {
+      background: url("../images/background.png") no-repeat bottom 140px left;
+      height: 1250px;
+      background-size: cover; } }
+  @media screen and (min-width: 1200px) {
+    .flags-top {
+      background: url("../images/background.png") no-repeat top -20vw left;
+      background-size: cover; } }
+
+.flags-top--success {
+  height: 100vh;
+  background: url("../images/flags.jpg") no-repeat top left;
+  background-size: cover; }
+
+.flags-logo {
+  width: 200px;
+  margin: 10px 0 -150px 10px; }
+  @media screen and (min-width: 350px) {
+    .flags-logo {
+      margin: 0px 0 -120px 0px; } }
+  @media screen and (min-width: 1084px) {
+    .flags-logo {
+      width: 300px;
+      margin: 20px 0 -250px 50px; } }
+
+.flags-title {
+  display: block;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: "trim-poster",sans-serif;
+  color: #000;
+  font-size: 50px;
+  line-height: 1em;
+  margin: 0 10px 50px; }
+  @media screen and (min-width: 1084px) {
+    .flags-title {
+      font-size: 80px; } }
+
+.flags-content {
+  width: 280px;
+  margin: 0 auto;
+  box-sizing: border-box; }
+  @media screen and (min-width: 350px) {
+    .flags-content {
+      width: 330px; } }
+  @media screen and (min-width: 450px) {
+    .flags-content {
+      width: 400px; } }
+  @media screen and (min-width: 700px) {
+    .flags-content {
+      width: 600px; } }
+  .flags-content p {
+    margin-top: 0;
+    margin-bottom: 10px; }
+  .flags-content .intro-text {
+    font-family: "Helvetica";
+    line-height: 1.25em;
+    font-size: 12px;
+    padding: 10px;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.7);
+    box-sizing: border-box; }
+    @media screen and (min-width: 350px) {
+      .flags-content .intro-text {
+        line-height: 1.5em;
+        padding: 20px; } }
+    @media screen and (min-width: 450px) {
+      .flags-content .intro-text {
+        font-size: 14px; } }
+    @media screen and (min-width: 1084px) {
+      .flags-content .intro-text {
+        padding: 30px;
+        font-size: 16px; } }
+
+.return-message {
+  width: 280px;
+  margin: 50px auto 0;
+  background-color: #fff;
+  border: 0;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+  box-sizing: border-box; }
+  @media screen and (min-width: 350px) {
+    .return-message {
+      width: 330px;
+      margin: 20px auto 0;
+      padding: 20px; } }
+  @media screen and (min-width: 450px) {
+    .return-message {
+      width: 400px; } }
+  @media screen and (min-width: 700px) {
+    .return-message {
+      width: 600px;
+      margin-top: 50px;
+      padding: 50px 100px; } }
+  @media screen and (min-width: 1084px) {
+    .return-message {
+      margin-top: 100px; } }
+
+.flags-form {
+  position: absolute;
+  top: 650px;
+  left: calc(50% - 140px);
+  width: 280px;
+  height: calc(100% - 600px);
+  background-color: #fff;
+  border: 0;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+  box-sizing: border-box; }
+  @media screen and (min-width: 350px) {
+    .flags-form {
+      width: 330px;
+      left: calc(50% - 165px);
+      height: calc(100% - 700px);
+      padding: 20px; } }
+  @media screen and (min-width: 450px) {
+    .flags-form {
+      top: 650px;
+      left: calc(50% - 200px);
+      width: 400px;
+      height: calc(100% - 650px); } }
+  @media screen and (min-width: 700px) {
+    .flags-form {
+      width: 600px;
+      left: calc(50% - 300px);
+      padding: 50px 100px; } }
+  @media screen and (min-width: 1084px) {
+    .flags-form {
+      top: 800px;
+      height: calc(100% - 1000px); } }
+  .flags-form .flags-container {
+    position: relative;
+    margin-top: 20px;
+    margin-bottom: 25px; }
+    .flags-form .flags-container:last-child {
+      margin-bottom: 0; }
+    .flags-form .flags-container.other {
+      visibility: hidden; }
+  .flags-form fieldset {
+    position: relative;
+    z-index: 9999;
+    border: 0;
+    margin: 0;
+    padding: 0; }
+  .flags-form label {
+    position: absolute;
+    top: -10px;
+    left: 10px;
+    background-color: #000;
+    color: #fff;
+    padding: 5px 15px;
+    font-size: 11px;
+    font-family: "Helvetica";
+    border-radius: 3px;
+    margin: 0;
+    line-height: 1.25em; }
+  .flags-form input[type="text"] {
+    display: block;
+    width: 100%;
+    border: 1px solid #000;
+    border-radius: 3px;
+    font-family: "Helvetica";
+    font-size: 14px;
+    line-height: 53px;
+    padding: 0 10px;
+    box-sizing: border-box; }
+    .flags-form input[type="text"]:focus, .flags-form input[type="text"]:active {
+      border: 1px solid #38B5ED;
+      outline: none; }
+      .flags-form input[type="text"]:focus + label, .flags-form input[type="text"]:active + label {
+        background-color: #38B5ED; }
+    .flags-form input[type="text"].field-error {
+      border: 1px solid #F15D49;
+      color: #F15D49; }
+      .flags-form input[type="text"].field-error + label {
+        background-color: #F15D49; }
+  .flags-form ::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    color: #000; }
+  .flags-form ::-moz-placeholder {
+    /* Firefox 19+ */
+    color: #000; }
+  .flags-form :-ms-input-placeholder {
+    /* IE 10+ */
+    color: #000; }
+  .flags-form :-moz-placeholder {
+    /* Firefox 18- */
+    color: #000; }
+  .flags-form select {
+    display: block;
+    width: 100%;
+    border: 1px solid #000;
+    border-radius: 3px;
+    font-family: "Helvetica";
+    font-size: 14px;
+    height: 55px;
+    padding: 0 10px;
+    box-sizing: border-box;
+    background: url("../images/arrow-down.svg") no-repeat center right 15px #fff;
+    background-size: 18px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none; }
+    .flags-form select option:first {
+      color: #ff0000; }
+    .flags-form select:focus, .flags-form select:active {
+      border: 1px solid #38B5ED;
+      outline: none; }
+      .flags-form select:focus + label, .flags-form select:active + label {
+        background-color: #38B5ED; }
+  .flags-form input[type="submit"],
+  .flags-form a.submit {
+    display: block;
+    background-color: #38B5ED;
+    border: 2px solid #38B5ED;
+    border-radius: 10px;
+    width: 250px;
+    margin: 0 auto;
+    padding: 15px 20px;
+    font-family: "Helvetica";
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 18px;
+    margin-top: 50px;
+    margin-bottom: 100px; }
+    .flags-form input[type="submit"]:hover, .flags-form input[type="submit"]:active,
+    .flags-form a.submit:hover,
+    .flags-form a.submit:active {
+      background-color: #fff;
+      border: 2px solid #38B5ED;
+      color: #38B5ED;
+      cursor: pointer; }
+  .flags-form .error {
+    display: none;
+    font-family: "Helvetica";
+    font-size: 12px;
+    margin-top: 10px;
+    padding: 10px 15px 10px 28px;
+    color: #F15D49;
+    border: 2px solid #F15D49;
+    background: url("../images/error.svg") no-repeat top 10px left 10px #F4CEC9; }
+
+.flags-footer {
+  position: absolute;
+  bottom: 0;
+  width: 100vw;
+  height: 23vw;
+  background: url("../images/footer.png") no-repeat bottom left;
+  background-size: contain;
+  margin-top: -50px; }
