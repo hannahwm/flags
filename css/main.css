@@ -276,6 +276,8 @@ body {
     color: #F15D49;
     border: 2px solid #F15D49;
     background: url("../images/error.svg") no-repeat top 10px left 10px #F4CEC9; }
+    .flags-form .error.visible {
+      display: block; }
 
 .flags-footer {
   position: absolute;

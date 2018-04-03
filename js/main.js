@@ -28,14 +28,19 @@ var $ = jQuery;
         self.$otherField = self.$container.find(self.options.otherField);
         self.$otherTextField = self.$otherField.find("input[type='text']");
         self.$select = self.$container.find("select");
+        self.$error = self.$otherField.find(".error");
     },
     bindEvents: function() {
       var self = this;
-      
+
+      if ( self.$error.hasClass("visible") ) {
+        self.$otherField.css("visibility", "visible");
+      }
+
       self.$select.on("change", function() {
         var selectedVal = $(this).find("option:selected");
         var text = selectedVal.text();
-        
+
         if ( text === "Other") {
           self.$otherField.css("visibility", "visible");
           self.$otherTextField.focus();
@@ -43,6 +48,7 @@ var $ = jQuery;
           self.$otherField.css("visibility", "hidden");
           self.$otherTextField.val("");
         }
+        
       });
     }
   };

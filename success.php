@@ -1,17 +1,37 @@
 <?php
-if(session_id() == '' || !isset($_SESSION)) {
-    // session isn't started
-    session_start();
-}
+// if(session_id() == '' || !isset($_SESSION)) {
+//     // session isn't started
+// }
+session_start();
 ini_set('smtp_port', 2025);
+
+$flag_selection = "test";
+$email = $_SESSION["user_email"];
+
+if(isset($_SESSION['other_selection']) && !empty($_SESSION['other_selection'])) {
+  $flag_selection = $_SESSION['other_selection'];
+} else {
+  $flag_selection = $_SESSION['chosen_flag'];
+}
+
+
 $subject = 'Commencement Flag Selection';
-$message = 'Hello. You have successfully registered to recieve a flag from '. $_SESSION["chosen_flag"] . ' If you believe this was an error, please contact us';
-$headers = 'From: flags@huskynunews.wpengine.com/' . "\r\n" .
-    'Reply-To: flags@huskynunews.wpengine.com/' . "\r\n" .
-    'X-Mailer: PHP/' . phpversion();
+
+$message = '<html><head><title>Commencement Flag Selection</title></head><body>';
+$message .= '<table><tr><td><p>Thanks for your submission!</p>';
+$message .= '<p>You have successfully registered to receive a flag from '. $flag_selection . '</p>';
+$message .= '<p>If you have any questions, or if this selection is incorrect, please email flags@northeastern.edu.</p>';
+$message .= '<p>Flags will be available for pickup at cap and gown distribution on Monday, April 30, and Tuesday, May 1, in the Cabot Center/Solomon Court from 9 am to 7 pm.</p>';
+$message .= '</td></tr></table></body></html>';
+
+$headers = "MIME-Version: 1.0" . "\r\n";
+$headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+$headers .= 'From: <flags@northeastern.edu>' . "\r\n" ;
+$headers .= 'Reply-To: <flags@northeastern.edu>' . "\r\n";
+$headers .= 'X-Mailer: PHP/' . phpversion();
 
   if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 600)) {
-      // last request was more than 30 minutes ago
+      // last request was more than 10 minutes ago
       session_unset();     // unset $_SESSION variable for the run-time
       session_destroy();   // destroy session data in storage
   }
@@ -21,7 +41,7 @@ $headers = 'From: flags@huskynunews.wpengine.com/' . "\r\n" .
 
 <html>
  <head>
-  <title>PHP Test</title>
+   <title>Commencement Flags 2018</title>
   <link rel="stylesheet" href="css/main.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
@@ -38,14 +58,17 @@ $headers = 'From: flags@huskynunews.wpengine.com/' . "\r\n" .
        <div class="flags-content">
            <div class="return-message">
 
+             <p>Email: <?php echo $email; ?></p>
+             <p>Flag: <?php echo $flag_selection; ?></p>
+
              <?php if (mail($_SESSION["user_email"], $subject, $message, $headers)) {
             ?>
             <p>Thanks for your submission!</p>
 
             <p>The form was submitted with the following email and flag selection.</p>
            
-            <p><?php echo  $_SESSION["user_email"]; ?></p>
-            <p><?php echo  $_SESSION["chosen_flag"]; ?></p>
+            <p><?php echo  $email ?></p>
+            <p><?php echo  $flag_selection; ?></p>
 
            
             <p>If you have any questions or if this selection is incorrect, please email flags@northeastern.edu with the details of your inquiry for more information.</p>
@@ -60,8 +83,6 @@ $headers = 'From: flags@huskynunews.wpengine.com/' . "\r\n" .
             } ?>
           </div>
         </div>
-
-  <!-- <div class="flags-footer"></div> -->
   </div>
 
  <script src="js/main.js"></script>
